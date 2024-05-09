@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio con Canvas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            // capturando canvas
+            var canvas = document.querySelector('#canvas');
+            // captura o definicion de contexto 2D o 3D
+            var contexto = canvas.getContext('2d');
+
+           var btncrearLineas = document.querySelector('#crearLineas'); 
+           btnCrearLineas.addEventListener('clic', () => {
+            contexto.beginPath();
+            contexto.moveTo(10, 10);
+            contexto.LineTo(180, 20);
+            contexto.Linewidth = 1; // 1 px
+            contexto.strokeStyle = '#74ff33';
+            contexto.stroke();
+            contexto.beginPath();
+           }) 
+           
+           
+        })
+    </script>
+    <style>
+        .page.content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .mdl-layout-title {
+          color: rgb(255, 51, 0);
+        }
+        .mdl-layout__header-row{
+          background: rgb(103, 245, 9);
+        }
+        canvas {
+            border: 6px solid rgb(21, 255, 0);
+            
+                       
+        }
+
+        .buttons {
+            width: 100;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .buttons button {
+            margin: 20px;
+            flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Escribe y publica tu libro</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="1.html">Inicio</a>
+          <a class="mdl-navigation__link" href="2.html">Manos a la obra</a>
+          <a class="mdl-navigation__link" href="3.html">Publicando</a>
+          <a class="mdl-navigation__link" href="4.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Contenido</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="1.html">Inicio</a>
+        <a class="mdl-navigation__link" href="2.html">Manos a lo obra</a>
+        <a class="mdl-navigation__link" href="3.html">Publicando</a>
+        <a class="mdl-navigation__link" href="4.html">Contacto</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="buttons">
+            <Button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="crearLineas">
+                Este es boton que puede serbir a otra cosa
+              </button>
+        </div>
+        <canvas id="canvas" class="" widh="200" height="200">
+            Navegador no soporta canvas
+        </canvas>
+    </div>
+    </main>
+  </div>
+</body>
+</html>
